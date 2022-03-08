@@ -1,0 +1,54 @@
+﻿@model WebMVC.Models.Filmes
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h2 style="text-decoration: underline">Cadastrar um Novo Filme</h2>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <b class = "control-label col-md-2">Nome do Filme: </b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nomeFilme, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nomeFilme, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="control-label col-md-2">Gênero: </b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.generoFilme, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.generoFilme, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="control-label col-md-2">Classificação: </b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.classificacaoFilme, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.classificacaoFilme, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
+        </div>
+    </div>
+
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval");
+    }
+</div>
+}
+
+<div>
+    <button class="btn btn-default">@Html.ActionLink("Voltar", "IndexFilmes")</button>
+</div>

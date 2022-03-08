@@ -1,0 +1,41 @@
+﻿@model WebMVC.Models.Filmes
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2 style="text-decoration: underline">Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Nome do Filme: </b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeFilme)
+        </dd>
+
+        <dt>
+            <b>Gênero: </b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.generoFilme)
+        </dd>
+
+        <dt>
+            <b>Classificação: </b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.classificacaoFilme)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn">@Html.ActionLink("Editar", "Editar", new { id = Model.id })</button>
+    <button class="btn btn-default">@Html.ActionLink("Voltar", "IndexFilmes")</button>
+</p>

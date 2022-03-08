@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebMVC.Models.Series>
+
+@{
+    ViewBag.Title = "IndexSeries";
+}
+
+<h2>Séries no Catálogo</h2>
+
+<button class="btn">
+    @Html.ActionLink("Cadastrar Nova Série", "Cadastrar")
+</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <b>Nome da Série</b>
+            </th>
+            <th>
+                <b>Gênero</b>
+            </th>
+            <th>
+                <b>Classificação</b>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeSerie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.generoSerie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classificacaoSerie)
+                </td>
+                <td>
+                    <button class="btn">@Html.ActionLink("Editar", "Editar", new { id = item.id })</button>
+                    <button class="btn btn-default">@Html.ActionLink("Detalhes", "Detalhes", new { id = item.id })</button>
+                    <button class="btn">@Html.ActionLink("Excluir", "Excluir", new { id = item.id })</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

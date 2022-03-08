@@ -1,0 +1,21 @@
+﻿<style>
+    body {
+        background-color: #F2F7F2;
+    }
+</style>
+
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2 style="text-decoration: underline">Menu Administrador</h2>
+
+<h3>O que deseja acessar?</h3>
+
+<button class="btn">
+    @Html.ActionLink("FILMES", "IndexFilmes", "Filmes")
+</button>
+<button class="btn btn-default" style="margin-left: 20px";>
+    @Html.ActionLink("SÉRIES", "IndexSeries", "Series")
+</button>

@@ -1,0 +1,41 @@
+﻿@model WebMVC.Models.Series
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2 style="text-decoration: underline">Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Nome da Série: </b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeSerie)
+        </dd>
+
+        <dt>
+            <b>Gênero: </b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.generoSerie)
+        </dd>
+
+        <dt>
+            <b>Classificação: </b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.classificacaoSerie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn">@Html.ActionLink("Editar", "Editar", new { id = Model.id })</button>
+    <button class="btn btn-default">@Html.ActionLink("Voltar", "IndexSeries")</button>
+</p>
